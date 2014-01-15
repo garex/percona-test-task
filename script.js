@@ -2,6 +2,24 @@
 	var oldone       = null,
 		initialTitle = null;
 
+	function setupMenu() {
+		var links = document.getElementById('menu').getElementsByTagName('a');
+
+		for (var i = 0, iMax = links.length; i < iMax; i++) {
+			links[i].onclick = function() {
+				var id = extractIdFromHash(this.href);
+				if (!document.getElementById(id)) {
+					return false;
+				}
+				toggle(id);
+			};
+		}
+	}
+
+	function extractIdFromHash(hash) {
+		return hash.split('#').slice(-1)[0];
+	}
+
 	function showFromHash() {
 		var hash = window.location.hash;
 
@@ -9,7 +27,7 @@
 			return false;
 		}
 
-		var id = hash.substring(1);
+		var id = extractIdFromHash(hash);
 		if (!document.getElementById(id)) {
 			return false;
 		}
@@ -44,6 +62,7 @@
 
 	window.toggle = toggle;
 	window.onload = function() {
+		setupMenu();
 		showFromHash() || show('about');
 	};
 })();
