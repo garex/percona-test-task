@@ -73,11 +73,12 @@
 <body>
     <?php   //  FIXME: Make this title change when switching between sections
             //  BONUS: CSS) use a nice font for this title. 
+    ?>
     <h1>Example</h1>
     <div>
 <?php
     // BONUS: CSS) make this an horizontal menu with rounded buttons ; JS) make the transition between sections look really nice
-    echo "<ul>"
+    echo "<ul>";
     print '<li><a onclick="javascript:void(toggle("about"))" href="#about">about</a>';
     print '<li><a onclick="javascript:void(toggle("services"))" href="#services">services</a>';
     print '<li><a onclick="javascript:void(toggle("customers"))" href="#customers">customers</a>';
@@ -95,7 +96,7 @@
 ?>    
 
 <?php
-    if (...) { 
+    if (false) { 
     // FIXME when url === #contacts, 
     // Display a form with three parameters: 
             // - Name (Text Input, 25 chars max), 
