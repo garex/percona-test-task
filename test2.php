@@ -19,23 +19,21 @@
 	<link href="style.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<?php // BONUS: CSS) use a nice font for this title ?>
 	<h1>Example</h1>
 
-	<?php // BONUS: CSS) make this an horizontal menu with rounded buttons ?>
 	<?php // BONUS: JS) make the transition between sections look really nice ?>
 	<div>
 		<ul id="menu">
-			<li><a href="#about">about</a></li>
-			<li><a href="#services">services</a></li>
-			<li><a href="#customers">customers</a></li>
-			<li><a href="#contacts">contacts</a></li>
+			<li class="round-corner-10"><a href="#about">about</a></li>
+			<li class="round-corner-10"><a href="#services">services</a></li>
+			<li class="round-corner-10"><a href="#customers">customers</a></li>
+			<li class="round-corner-10"><a href="#contacts">contacts</a></li>
 		</ul>
 	</div>
 
 	<p>&nbsp;</p>
 
-	<?php // BONUS: DESIGN/CSS) improve how the section contents looks ?>
+	<?php // BONUS - DESIGN/CSS) improve how the section contents looks ?>
 	<div id="about" class="hidden">
 		about lorem<!-- // -->
 	</div>
@@ -58,7 +56,7 @@
 				// - Message (Text Area, 255 chars)
 		// Add simple antispam protection (anyone you propose // please explain why)
 		// If parameters are wrong, the form must be pre-populated with submitted data
-		// BONUS: JS/CSS) make the form look awesome
+		// BONUS - JS/CSS) make the form look awesome
 	}
 	?>
 
