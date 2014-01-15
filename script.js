@@ -2,6 +2,23 @@
 	var oldone       = null,
 		initialTitle = null;
 
+	function showFromHash() {
+		var hash = window.location.hash;
+
+		if (!hash) {
+			return false;
+		}
+
+		var id = hash.substring(1);
+		if (!document.getElementById(id)) {
+			return false;
+		}
+
+		show(id);
+
+		return true;
+	}
+
 	function show(id) {
 		var obj = document.getElementById(id);
 		obj.className = '';
@@ -27,6 +44,6 @@
 
 	window.toggle = toggle;
 	window.onload = function() {
-		show('about');
+		showFromHash() || show('about');
 	};
 })();
