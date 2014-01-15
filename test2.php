@@ -3,8 +3,6 @@
 	$email = $REQUEST['email'];
 	$message = $REQUEST['message'];
 
-	$code_guessed = false;
-
 	if ($name) {
 		if ($email) { // FIXME check existense of "@" sign
 			// FIXME: do other necessary validations
@@ -12,8 +10,6 @@
 			//BONUS: PHP) add some very basic logging system;
 		}
 	}
-
-	if (!$code_guessed) {
 ?>
 <!-- // ensure STRICT XHTML compliance -->
 <html>
@@ -97,5 +93,3 @@
 ?>
 </body>
 </html>
-<?php
-	} // end $code_guessed
