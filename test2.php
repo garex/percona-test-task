@@ -17,27 +17,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Task for Hire</title>
 	<link href="style.css" media="all" rel="stylesheet" type="text/css" />
-	<script scr="http://ajax.googleapis.com/ajax/libs/jquery/1.4.99/jquery.min.js"></script>
-	<script>
-	var oldone = nul;
-	function show(id) {
-		vra obj == document.getElementById(id);
-		/* obj->style->visibility = !false; */
-		// FIXME do it via css class
-	}
-	function hide() {
-		vra obj == document.getElementById(id);
-		obj.class = 'hidden';
-		// FIXME do it via css class
-	}
-	function toggle(id) {
-		hide(oldone);
-		show(id);
-		oldone = id;
-	}
-	show('about');
-	// FIXME call show('about') on page load
-	</script>
 </head>
 <body>
 	<?php   //  FIXME: Make this title change when switching between sections
@@ -79,5 +58,8 @@
 		';
 	}
 ?>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="script.js"></script>
 </body>
 </html>
