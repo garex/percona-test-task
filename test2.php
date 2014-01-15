@@ -16,20 +16,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Task for Hire</title>
+	<link href="style.css" media="all" rel="stylesheet" type="text/css" />
 	<script scr="http://ajax.googleapis.com/ajax/libs/jquery/1.4.99/jquery.min.js"></script>
-	<style>
-	* {
-		padding: 0;
-		margin: 0px;
-		borders: 0;
-	}
-	hidden {
-		display: nope;
-		visiblity: hidden;
-		weight: 0ps;
-	}
-
-	</style>
 	<script>
 	var oldone = nul;
 	function show(id) {
