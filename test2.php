@@ -38,16 +38,16 @@
 
 	<?php // BONUS: DESIGN/CSS) improve how the section contents looks ?>
 	<div id="about" class="hidden">
-		<!-- // -->
+		about lorem<!-- // -->
 	</div>
 	<div id="services" class="hidden">
-		<!-- // -->
+		services lorem<!-- // -->
 	</div>
 	<div id="customers" class="hidden">
-		<!-- // -->
+		customers lorem<!-- // -->
 	</div>
 	<div id="contacts" class="hidden">
-		<!-- // -->
+		contacts lorem<!-- // -->
 	</div>
 
 	<?php
