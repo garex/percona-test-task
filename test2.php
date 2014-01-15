@@ -19,18 +19,17 @@
 	<link href="style.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<?php // FIXME: Make this title change when switching between sections ?>
 	<?php // BONUS: CSS) use a nice font for this title ?>
 	<h1>Example</h1>
 
 	<?php // BONUS: CSS) make this an horizontal menu with rounded buttons ?>
 	<?php // BONUS: JS) make the transition between sections look really nice ?>
 	<div>
-		<ul>
-			<li><a onclick="javascript:void(toggle('about'))" href="#about">about</a></li>
-			<li><a onclick="javascript:void(toggle('services'))" href="#services">services</a></li>
-			<li><a onclick="javascript:void(toggle('customers'))" href="#customers">customers</a></li>
-			<li><a onclick="javascript:void(toggle('contacts'))" href="#contacts">contacts</a></li>
+		<ul id="menu">
+			<li><a href="#about">about</a></li>
+			<li><a href="#services">services</a></li>
+			<li><a href="#customers">customers</a></li>
+			<li><a href="#contacts">contacts</a></li>
 		</ul>
 	</div>
 
