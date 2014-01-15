@@ -33,7 +33,7 @@
 
 	<p>&nbsp;</p>
 
-	<?php // BONUS: DESIGN/CSS) improve how the section contents looks ?>
+	<?php // BONUS - DESIGN/CSS) improve how the section contents looks ?>
 	<div id="about" class="hidden">
 		about lorem<!-- // -->
 	</div>
@@ -56,7 +56,7 @@
 				// - Message (Text Area, 255 chars)
 		// Add simple antispam protection (anyone you propose // please explain why)
 		// If parameters are wrong, the form must be pre-populated with submitted data
-		// BONUS: JS/CSS) make the form look awesome
+		// BONUS - JS/CSS) make the form look awesome
 	}
 	?>
 
