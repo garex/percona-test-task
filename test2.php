@@ -19,7 +19,6 @@
 	<link href="style.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<?php // BONUS: CSS) use a nice font for this title ?>
 	<h1>Example</h1>
 
 	<?php // BONUS: CSS) make this an horizontal menu with rounded buttons ?>

@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Play:400,700&subset=latin,cyrillic);
+
 * {
     padding: 0px;
     margin: 0px;
@@ -6,4 +8,8 @@
 
 .hidden {
     display: none;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
 }
