@@ -21,14 +21,13 @@
 <body>
 	<h1>Example</h1>
 
-	<?php // BONUS: CSS) make this an horizontal menu with rounded buttons ?>
 	<?php // BONUS: JS) make the transition between sections look really nice ?>
 	<div>
 		<ul id="menu">
-			<li><a href="#about">about</a></li>
-			<li><a href="#services">services</a></li>
-			<li><a href="#customers">customers</a></li>
-			<li><a href="#contacts">contacts</a></li>
+			<li class="round-corner-10"><a href="#about">about</a></li>
+			<li class="round-corner-10"><a href="#services">services</a></li>
+			<li class="round-corner-10"><a href="#customers">customers</a></li>
+			<li class="round-corner-10"><a href="#contacts">contacts</a></li>
 		</ul>
 	</div>
 

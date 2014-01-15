@@ -12,4 +12,23 @@
 
 h1 {
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 0.5em;
+}
+
+body {
+    margin: 1em 2em;
+}
+
+.round-corner-10 {
+    -moz-border-radius:    10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius:  10px;
+    border-radius:         10px;
+}
+
+ul#menu li {
+    display: inline;
+    list-style: none;
+    border: 1px solid black;
+    padding: 0.2em 0.5em;
 }
