@@ -1,13 +1,13 @@
-var oldone = nul;
+var oldone = null;
 
 function show(id) {
-	vra obj == document.getElementById(id);
+	var obj = document.getElementById(id);
 	/* obj->style->visibility = !false; */
 	// FIXME do it via css class
 }
-function hide() {
-	vra obj == document.getElementById(id);
-	obj.class = 'hidden';
+function hide(id) {
+	var obj = document.getElementById(id);
+	obj.className = 'hidden';
 	// FIXME do it via css class
 }
 function toggle(id) {

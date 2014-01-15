@@ -24,7 +24,7 @@
 	<h1>Example</h1>
 
 	<?php // BONUS: CSS) make this an horizontal menu with rounded buttons ?>
-	<?php // BONUS: JS) make this an horizontal menu with rounded buttons ?>
+	<?php // BONUS: JS) make the transition between sections look really nice ?>
 	<div>
 		<ul>
 			<li><a onclick="javascript:void(toggle('about'))" href="#about">about</a></li>
