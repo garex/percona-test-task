@@ -1,11 +1,9 @@
 * {
-    padding: 0;
+    padding: 0px;
     margin: 0px;
-    borders: 0;
+    border: none;
 }
 
-hidden {
-    display: nope;
-    visiblity: hidden;
-    weight: 0ps;
+.hidden {
+    display: none;
 }
