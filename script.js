@@ -1,10 +1,18 @@
 (function() {
-	var oldone = null;
+	var oldone       = null,
+		initialTitle = null;
 
 	function show(id) {
 		var obj = document.getElementById(id);
 		obj.className = '';
 		oldone = id;
+		setTitle(id);
+	}
+
+	function setTitle(newTitle) {
+		!initialTitle && (initialTitle = document.title);
+
+		document.title = newTitle + ' — ' + initialTitle;
 	}
 
 	function hide(id) {

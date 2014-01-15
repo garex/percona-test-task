@@ -19,7 +19,6 @@
 	<link href="style.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<?php // FIXME: Make this title change when switching between sections ?>
 	<?php // BONUS: CSS) use a nice font for this title ?>
 	<h1>Example</h1>
 
