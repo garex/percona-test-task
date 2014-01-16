@@ -45,6 +45,38 @@
 	</div>
 	<div id="contacts" class="hidden">
 		contacts lorem<!-- // -->
+
+		<form method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>#contacts">
+			<div class="first-row">
+				<div class="two-cells first-cell">
+					<div>
+						<label>Name</label>
+						<input type="text" maxlength="25" name="name" />
+					</div>
+				</div>
+				<div class="two-cells last-cell">
+					<div>
+						<label>E-mail</label>
+						<input type="text" maxlength="25" name="email" />
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="one-cell">
+					<div>
+						<label>Message</label>
+						<textarea rows="5" cols="10" name="message"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="last-row">
+				<div class="one-cell right-aligned">
+					<div>
+						<input type="submit" value="Send" />
+					</div>
+				</div>
+			</div>
+		</form>
 	</div>
 
 	<?php
