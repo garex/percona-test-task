@@ -65,7 +65,7 @@
 				<div class="one-cell">
 					<div>
 						<label>Message</label>
-						<textarea rows="5" cols="10" name="message"></textarea>
+						<textarea rows="5" cols="10" id="message" name="message"></textarea>
 					</div>
 				</div>
 			</div>
