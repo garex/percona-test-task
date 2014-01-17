@@ -24,6 +24,8 @@ class Form {
 
 	private $_errors = array();
 	private $_data = array();
+	private $_spamQuestion = '';
+	private $_spamSalt = 'yaiPh7ai oCah9aC7 iShahf1o Libier8w Uighoow1 ua7Et4da Aireil3p Ceicu6Co';
 
 	public function __construct($data) {
 		if (!empty($data)) {
@@ -47,6 +49,15 @@ class Form {
 		return htmlspecialchars($this->getValue($name));
 	}
 
+	public function getSpamQuestion() {
+		return $this->_generateSpamQuestionOnce();
+	}
+
+	public function getSpamHash() {
+		$answer = eval('return ' . $this->_generateSpamQuestionOnce() . ';');
+		return $this->_generateSpamHash($answer);
+	}
+
 	public function getErrors() {
 		$errors = array();
 		array_walk_recursive($this->_errors, function($error) use (&$errors) {
@@ -62,6 +73,7 @@ class Form {
 			->_maxLength('name', 25)->_maxLength('email', 25)->_maxLength('message', 255)
 			->_emailAddress('email')
 			->_plainText('name')->_plainText('email')->_plainText('message')
+			->_required('answer', 'mathematical answer')->_noSpam('answer', 'hash')
 		;
 	}
 
@@ -70,11 +82,12 @@ class Form {
 		return $this;
 	}
 
-	private function _required($name) {
+	private function _required($name, $messageName = null) {
 		if ($this->getValue($name)) {
 			return $this;
 		}
-		return $this->_addError($name, $name . ' is required');
+		$messageName = ($messageName) ? $messageName : $name;
+		return $this->_addError($name, $messageName . ' is required');
 	}
 
 	private function _maxLength($name, $value) {
@@ -104,6 +117,25 @@ class Form {
 			$message = $name . ' must contain a ' . $char . ' character';
 		}
 		return $this->_addError($name, $message);
+	}
+
+	private function _generateSpamQuestionOnce() {
+		if (!empty($this->_spamQuestion)) {
+			return $this->_spamQuestion;
+		}
+		$this->_spamQuestion = '1 + 2';
+		return $this->_spamQuestion;
+	}
+
+	private function _generateSpamHash($answer) {
+		return md5(date('Ymd') . $answer . $this->_spamSalt);
+	}
+
+	private function _noSpam($name, $hashName) {
+		if ($this->getValue($hashName) == $this->_generateSpamHash($this->getValue($name))) {
+			return $this;
+		}
+		return $this->_addError($name, 'spam is a bad practice! pls answer correclty');
 	}
 
 }
@@ -207,8 +239,15 @@ $f      = $action->form;
 				</div>
 			</div>
 			<div class="last-row">
-				<div class="one-cell right-aligned">
+				<div class="two-cells first-cell">
 					<div>
+						<label>How many will be <?php echo $f->getSpamQuestion() ?>?</label>
+						<input type="text" maxlength="2" class="inline" name="answer" />
+						<input type="hidden" name="hash" value="<?php echo $f->getSpamHash() ?>"/>
+					</div>
+				</div>
+				<div class="two-cells last-cell">
+					<div class="right-aligned">
 						<input type="submit" value="Send" />
 					</div>
 				</div>
