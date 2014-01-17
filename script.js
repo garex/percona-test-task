@@ -16,6 +16,22 @@
 		}
 	}
 
+	function addMaxLength(id, length) {
+		var input = document.getElementById(id);
+
+		if (input.maxLength) {
+			input.maxLength = length;
+			return;
+		}
+
+		input.onblur = input.onkeyup = input.onkeydown = function() {
+			if (this.value.length > length) {
+				this.value = this.value.substring(0, length);
+				return false;
+			}
+		};
+	}
+
 	function extractIdFromHash(hash) {
 		return hash.split('#').slice(-1)[0];
 	}
@@ -63,6 +79,7 @@
 	window.toggle = toggle;
 	window.onload = function() {
 		setupMenu();
+		addMaxLength('message', 255);
 		showFromHash() || show('about');
 	};
 })();
