@@ -114,3 +114,14 @@ input[type=submit] {
 textarea {
 	height: 10em;
 }
+
+.errors {
+	background: pink;
+	color: red;
+	font-size: 130%;
+	padding: 1em;
+}
+
+.errors ul {
+	margin-left: 1em;
+}
