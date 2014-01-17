@@ -1,34 +1,133 @@
 @import url(http://fonts.googleapis.com/css?family=Play:400,700&subset=latin,cyrillic);
 
 * {
-    padding: 0px;
-    margin: 0px;
-    border: none;
+	padding: 0px;
+	margin: 0px;
+	border: none;
 }
 
 .hidden {
-    display: none;
+	display: none;
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif;
-    margin-bottom: 0.5em;
+	font-family: 'Roboto', sans-serif;
+	margin-bottom: 0.5em;
 }
 
 body {
-    margin: 1em 2em;
+	margin: 1em 2em;
 }
 
 .round-corner-10 {
-    -moz-border-radius:    10px;
-    -webkit-border-radius: 10px;
-    -khtml-border-radius:  10px;
-    border-radius:         10px;
+	-moz-border-radius:    10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius:  10px;
+	border-radius:         10px;
 }
 
 ul#menu li {
-    display: inline;
-    list-style: none;
-    border: 1px solid black;
-    padding: 0.2em 0.5em;
+	display: inline;
+	list-style: none;
+	border: 1px solid black;
+	padding: 0.2em 0.5em;
+}
+
+form {
+	width: 800px;
+	background: gainsboro;
+	clear: both;
+}
+
+form > div {
+	clear: both;
+	margin: 1em 0;
+}
+
+form > div:before,
+form > div:after {
+	display: table;
+	content: " ";
+}
+
+form > div:after {
+	clear: both;
+}
+
+form > div.first-row > div {
+	margin-top: 1em;
+}
+form > div.last-row > div {
+	margin-bottom: 1em;
+}
+
+form > div > div {
+	display: block;
+	float: left;
+}
+
+form > div > div.one-cell {
+	width: 100%;
+}
+
+form > div > div.two-cells {
+	width: 50%;
+}
+
+form > div > div > div {
+	margin: 0.5em 2em;
+}
+
+form > div > div.first-cell > div {
+	margin-right: 1em;
+}
+
+form > div > div.last-cell > div {
+	margin-left: 1em;
+}
+
+.right-aligned {
+	text-align: right;
+}
+
+label {
+	font-family: 'Roboto', sans-serif;
+	font-style: italic;
+	font-size: 1em;
+}
+
+input[type=text], textarea {
+	font-family: 'Roboto', sans-serif;
+	font-size: 2em;
+	border: 1px solid gray;
+	margin-top: 0.5em;
+	width: 100%;
+}
+
+input[type=text].inline {
+	width: 4em;
+	margin-top: 0px;
+	margin-left: 0.5em;
+}
+
+input[type=submit] {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1em;
+	border: 2px outset;
+	padding: 0.4em 0.8em;
+}
+
+textarea {
+	height: 10em;
+}
+
+.errors {
+	background: pink;
+	color: red;
+	font-size: 130%;
+	padding: 1em;
+}
+
+.errors ul {
+	margin-left: 1em;
 }
