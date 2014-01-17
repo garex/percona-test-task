@@ -123,7 +123,13 @@ class Form {
 		if (!empty($this->_spamQuestion)) {
 			return $this->_spamQuestion;
 		}
-		$this->_spamQuestion = '1 + 2';
+
+		$n1  = rand(1, 10);
+		$n2  = rand(1, 10);
+		$ops = array('+', '+', '-');
+		$op  = $ops[array_rand($ops)];
+		$this->_spamQuestion = max($n1, $n2) . ' ' . $op . ' ' . min($n1, $n2);
+
 		return $this->_spamQuestion;
 	}
 
