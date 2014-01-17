@@ -14,6 +14,7 @@ class Main {
 		$this->form = $f = new Form($data);
 		if ($f->isValid()) {
 			$sender->send($f->getValue('email'), $f->getValue('message'), $f->getValue('name'));
+			$f->reset();
 			header('Location: ' . $_SERVER['PHP_SELF']);
 		}
 	}
@@ -25,9 +26,9 @@ class Form {
 	private $_errors = array();
 	private $_data = array();
 	private $_spamQuestion = '';
-	private $_spamSalt = 'yaiPh7ai oCah9aC7 iShahf1o Libier8w Uighoow1 ua7Et4da Aireil3p Ceicu6Co';
 
 	public function __construct($data) {
+		session_start();
 		if (!empty($data)) {
 			$this->_validate($data);
 		}
@@ -64,6 +65,10 @@ class Form {
 			$errors[] = $error;
 		});
 		return $errors;
+	}
+
+	public function reset() {
+		$this->_resetSpamSalt();
 	}
 
 	private function _validate($data) {
@@ -134,7 +139,7 @@ class Form {
 	}
 
 	private function _generateSpamHash($answer) {
-		return md5(date('Ymd') . $answer . $this->_spamSalt);
+		return md5(date('Ymd') . $answer . $this->_getSpamSalt());
 	}
 
 	private function _noSpam($name, $hashName) {
@@ -142,6 +147,17 @@ class Form {
 			return $this;
 		}
 		return $this->_addError($name, 'spam is a bad practice! pls answer correclty');
+	}
+
+	private function _getSpamSalt() {
+		if (empty($_SESSION['spamSalt'])) {
+			$this->_resetSpamSalt();
+		}
+		return $_SESSION['spamSalt'];
+	}
+
+	private function _resetSpamSalt() {
+		$_SESSION['spamSalt'] = uniqid('spamSalt');
 	}
 
 }
@@ -261,12 +277,7 @@ $f      = $action->form;
 		</form>
 	</div>
 
-	<?php
-	if (false) {
-		// FIXME Add simple antispam protection (anyone you propose // please explain why)
-		// BONUS - JS/CSS) make the form look awesome
-	}
-	?>
+	<?php // BONUS - JS/CSS) make the form look awesome ?>
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
