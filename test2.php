@@ -7,9 +7,6 @@ class Main {
 	 */
 	public $form;
 
-	private $_formErrors = array();
-	private $_formData = array();
-
 	public function __construct($data, MailSender $sender) {
 		$this->form = $f = new Form($data);
 		if ($f->isValid()) {
@@ -178,7 +175,15 @@ class MailSender {
 		$this->_subject = $subject;
 	}
 
-	public function send($fromEmail, $message, $fromName = '') {
+    /**
+     * Sends message
+     *
+     * @param string $fromEmail Email from it's sends
+     * @param string $message Message
+     * @param string $fromName
+     * @return bool
+     */
+    public function send($fromEmail, $message, $fromName = '') {
 		$fromValue = $fromEmail;
 		if ($fromName) {
 			$fromValue = $fromName . ' <' . $fromValue . '>';
